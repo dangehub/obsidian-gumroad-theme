@@ -88,7 +88,7 @@ jobs:
         if: steps.version_check.outputs.version_changed == 'true'
         run: |
           VERSION=$(jq -r '.version' manifest.json)
-          TAG_NAME="v$VERSION"
+          TAG_NAME="$VERSION"
 
           # 检查标签是否已存在
           if git rev-parse "$TAG_NAME" >/dev/null 2>&1; then
@@ -110,8 +110,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: v${{ steps.version_check.outputs.new_version }}
-          release_name: Release v${{ steps.version_check.outputs.new_version }}
+          tag_name: ${{ steps.version_check.outputs.new_version }}
+          release_name: Release ${{ steps.version_check.outputs.new_version }}
           body: ${{ env.body }}
           draft: false
           prerelease: false

@@ -141,7 +141,7 @@ jobs:
         id: create_tag
         run: |
           VERSION="${{ github.event.inputs.version }}"
-          TAG_NAME="v$VERSION"
+          TAG_NAME="$VERSION"
 
           # 检查标签是否已存在
           if git rev-parse "$TAG_NAME" >/dev/null 2>&1; then
@@ -160,8 +160,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: v${{ github.event.inputs.version }}
-          release_name: Release v${{ github.event.inputs.version }}
+          tag_name: ${{ github.event.inputs.version }}
+          release_name: Release ${{ github.event.inputs.version }}
           body: ${{ env.body }}
           draft: false
           prerelease: ${{ github.event.inputs.is_prerelease }}
