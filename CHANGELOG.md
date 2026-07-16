@@ -13,9 +13,11 @@
 -
 
 ### Fixed
--
+- Fix interactive elements and Syncthing Manager device badges being pure black (invisible) due to `--background-modifier-border` cascading to `--interactive-normal` on macOS
 
 ---
+
+## [0.1.11-fix] - 2026-07-16
 
 ## [0.1.6] - 2025-12-27
 
