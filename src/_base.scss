@@ -34,6 +34,9 @@ body {
 
   --hl1: var(--gumroad-accent);
 
+  --interactive-normal: var(--bg2);
+  --interactive-hover: var(--bg3);
+
   // Borders
   --border-width: 1px;
   // --interactive-accent: var(--gumroad-black);
@@ -82,6 +85,13 @@ body {
   --h5-color: var(--gumroad-yellow);
   --h3-color: var(--gumroad-orange);
   --h4-color: var(--gumroad-purple);
+}
+
+// Override app.css macOS-specific cascade
+// .mod-macos { --interactive-normal: var(--background-modifier-border) } would override body's value
+body.mod-macos {
+  --interactive-normal: var(--bg2);
+  --interactive-hover: var(--bg3);
 }
 
 .theme-light {

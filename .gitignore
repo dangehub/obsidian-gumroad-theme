@@ -55,8 +55,3 @@ Thumbs.db
 /tmp/
 release_body.md
 old_manifest.json
-
-# SCSS source files (if you use them)
-src/
-*.scss
-*.scss.map

@@ -503,6 +503,12 @@ strong, .cm-strong {
   margin-top: 1em;
 }
 
+/* ! Syncthing Manager */
+.st-device-badge {
+  background-color: var(--bg2) !important;
+  color: var(--tx1) !important;
+}
+
 // === 普通样式 ===
 // 高亮文字
 mark,
